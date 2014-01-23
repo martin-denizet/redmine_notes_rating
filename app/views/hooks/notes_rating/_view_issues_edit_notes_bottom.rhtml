@@ -1,0 +1,16 @@
+<% content_for :header_tags do %>
+  <%= stylesheet_link_tag 'notes_rating', :plugin => 'redmine_notes_rating' %>
+<% end %>
+<%
+url={
+  :controller => 'notes_rating',
+  :action => "like",
+  :id => @notes
+}
+%>
+<span class="nr_like"><%= link_to_remote image_tag('delete.png'),
+    :url=>url,
+    :style => "vertical-align: middle",
+    :class => 'delete'
+%></span>
+<%= @notes %>
